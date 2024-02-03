@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-function Router() {
+export default function Router() {
    const router = createBrowserRouter([]);
 
    return <RouterProvider router={router} />;
