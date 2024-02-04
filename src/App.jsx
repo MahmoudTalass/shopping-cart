@@ -1,5 +1,14 @@
-function App() {
-   return <></>;
-}
+import { Outlet } from "react-router-dom";
+import Header from "./Components/Header/Header";
+import Footer from "./Components/Footer/Footer";
+import "./pageLayout.css";
 
-export default App;
+export default function App() {
+   return (
+      <>
+         <Header />
+         <Outlet />
+         <Footer />
+      </>
+   );
+}
