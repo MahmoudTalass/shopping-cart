@@ -1,0 +1,13 @@
+.nav {
+   display: flex;
+   justify-content: center;
+   gap: 1rem;
+   background-color: #ccc;
+   padding: 0.5rem 0;
+}
+
+.navLink {
+   text-decoration: none;
+   color: #fff;
+   font-size: 1.2rem;
+}
