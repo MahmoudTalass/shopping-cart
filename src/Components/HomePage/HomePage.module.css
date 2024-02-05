@@ -1,0 +1,31 @@
+.homePage {
+   display: flex;
+   flex-direction: column;
+   padding: 5rem;
+   align-items: center;
+   gap: 8rem;
+}
+
+.brandInfoContainer {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+}
+
+.brandInfoText {
+   max-width: 600px;
+   font-size: 1.2rem;
+   line-height: 1.5rem;
+   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+   padding: 2rem;
+   border-radius: 5px;
+}
+
+.shopBtn {
+   padding: 1.6rem 3.5rem;
+   background: #ccc;
+   text-decoration: none;
+   color: #fff;
+   font-size: 1.6rem;
+   border-radius: 10px;
+}
