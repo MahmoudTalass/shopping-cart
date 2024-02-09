@@ -10,7 +10,8 @@ export default function ShopPage() {
       async function fetchProducts() {
          try {
             const response = await fetch(
-               "https://fakestoreapi.com/products/category/jewelery"
+               "https://fakestoreapi.com/products/category/jewelery",
+               { cors: "cors" }
             );
 
             if (!response.ok) {
@@ -28,6 +29,7 @@ export default function ShopPage() {
             setLoading(false);
          }
       }
+      debugger;
 
       let ignore = false;
       fetchProducts();
