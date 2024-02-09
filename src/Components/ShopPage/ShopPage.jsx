@@ -29,7 +29,6 @@ export default function ShopPage() {
             setLoading(false);
          }
       }
-      debugger;
 
       let ignore = false;
       fetchProducts();
