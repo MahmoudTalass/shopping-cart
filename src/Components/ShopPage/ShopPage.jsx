@@ -1,5 +1,7 @@
 import { useOutletContext } from "react-router-dom";
 import { useEffect, useState } from "react";
+import styles from "./ShopPage.module.css";
+import ProductCard from "../ProductCard/ProductCard";
 
 export default function ShopPage() {
    const [products, setProducts] = useState(null);
@@ -48,12 +50,12 @@ export default function ShopPage() {
       );
    }
 
-   if (loading) return <p>Loading...</p>;
+   if (loading) return <p className={styles.loadingView}>Loading...</p>;
 
    return (
-      <div>
+      <div className={styles.productsContainer}>
          {products.map((product) => {
-            return product.title;
+            return <ProductCard key={product.id} {...product} />;
          })}
       </div>
    );
