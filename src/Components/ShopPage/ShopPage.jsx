@@ -15,18 +15,19 @@ export default function ShopPage() {
             );
 
             if (!response.ok) {
-               throw new Error(response.statusText);
+               throw new Error("Network Error Occured " + response.statusText);
             }
             const jsonData = await response.json();
 
             if (!ignore) {
                setProducts(jsonData);
+               setLoading(false);
+               setError(null);
             }
          } catch (error) {
             setProducts(null);
-            setError(error);
-         } finally {
             setLoading(false);
+            setError(error);
          }
       }
 
@@ -42,8 +43,7 @@ export default function ShopPage() {
    if (error) {
       return (
          <div>
-            <h1>Network error</h1>
-            <p>{error.message}</p>
+            <h1>{error.message}</h1>
          </div>
       );
    }
