@@ -1,0 +1,19 @@
+.productCard {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 2rem 1rem;
+   gap: 1rem;
+   max-width: 300px;
+   border-radius: 5px;
+   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+   max-height: 800px;
+}
+
+.productImage {
+   max-width: 80%;
+}
+
+.description {
+   overflow: auto;
+}
