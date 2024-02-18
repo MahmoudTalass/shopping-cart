@@ -49,10 +49,10 @@ export default function ShopPage() {
    if (loading) return <p className={styles.loadingView}>Loading...</p>;
 
    return (
-      <div className={styles.productsContainer}>
+      <main className={styles.productsContainer}>
          {products.map((product) => {
             return <ProductCard key={product.id} {...product} />;
          })}
-      </div>
+      </main>
    );
 }
