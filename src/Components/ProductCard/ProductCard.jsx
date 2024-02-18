@@ -1,9 +1,11 @@
 import PropTypes from "prop-types";
 import styles from "./ProductCard.module.css";
 import { useState } from "react";
+import { useOutletContext } from "react-router-dom";
 
-function ProductCard({ title, image, description, price }) {
+function ProductCard({ image, title, description, price, id }) {
    const [productCount, setProductCount] = useState(0);
+   const { handleAdjustingBag } = useOutletContext();
 
    function handleIncrementProductCount() {
       if (productCount != 100) {
@@ -49,7 +51,14 @@ function ProductCard({ title, image, description, price }) {
                   +
                </button>
             </div>
-            <button>Add to bag</button>
+            <button
+               onClick={() => {
+                  handleAdjustingBag({ title, image, description, price, id }, productCount);
+                  setProductCount(0);
+               }}
+            >
+               Add to bag
+            </button>
          </div>
       </div>
    );
@@ -59,7 +68,8 @@ ProductCard.propTypes = {
    title: PropTypes.string,
    image: PropTypes.string,
    description: PropTypes.string,
-   price: PropTypes.string,
+   price: PropTypes.number,
+   id: PropTypes.number,
 };
 
 export default ProductCard;
