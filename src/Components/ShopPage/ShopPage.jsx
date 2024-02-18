@@ -1,4 +1,3 @@
-import { useOutletContext } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styles from "./ShopPage.module.css";
 import ProductCard from "../ProductCard/ProductCard";
@@ -11,10 +10,9 @@ export default function ShopPage() {
    useEffect(() => {
       async function fetchProducts() {
          try {
-            const response = await fetch(
-               "https://fakestoreapi.com/products/category/jewelery",
-               { cors: "cors" }
-            );
+            const response = await fetch("https://fakestoreapi.com/products/category/jewelery", {
+               cors: "cors",
+            });
 
             if (!response.ok) {
                throw new Error("Network Error Occured " + response.statusText);
@@ -39,8 +37,6 @@ export default function ShopPage() {
          ignore = true;
       };
    }, []);
-
-   const { handleBagChanges } = useOutletContext();
 
    if (error) {
       return (
