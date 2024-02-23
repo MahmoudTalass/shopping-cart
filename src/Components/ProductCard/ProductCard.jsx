@@ -20,7 +20,7 @@ function ProductCard({ image, title, description, price, id }) {
    }
 
    return (
-      <div className={styles.productCard}>
+      <article className={styles.productCard}>
          <img className={styles.productImage} src={image} alt={title} />
          <p className={styles.title}>{title}</p>
          <p className={styles.price}>${price}</p>
@@ -60,7 +60,7 @@ function ProductCard({ image, title, description, price, id }) {
                Add to bag
             </button>
          </div>
-      </div>
+      </article>
    );
 }
 
