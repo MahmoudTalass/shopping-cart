@@ -53,7 +53,7 @@ function ProductCard({ image, title, description, price, id }) {
             </div>
             <button
                onClick={() => {
-                  addToBag(id, productCount);
+                  addToBag({ image, title, description, price, id }, productCount);
                   setProductCount(0);
                }}
             >
