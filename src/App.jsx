@@ -17,23 +17,24 @@ export default function App() {
       });
    }
 
-   function addToBag(productId, quantityInput) {
-      let product = bag[productId];
+   function addToBag(product, quantityInput) {
       quantityInput = Number(quantityInput);
 
-      if (productId in bag) {
+      if (product.id in bag) {
+         let currentQuantity = bag[product.id].quantity;
+
          setBag({
             ...bag,
-            [productId]: { ...product, quantity: product.quantity + quantityInput },
+            [product.id]: { ...product, quantity: currentQuantity + quantityInput },
          });
       } else {
          setBag({
             ...bag,
-            [productId]: { ...product, quantity: quantityInput },
+            [product.id]: { ...product, quantity: quantityInput },
          });
       }
    }
-
+   console.log(bag);
    let productsCount = 0;
 
    for (let product in bag) {
