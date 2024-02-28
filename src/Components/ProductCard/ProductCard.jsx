@@ -5,7 +5,7 @@ import { useOutletContext } from "react-router-dom";
 
 function ProductCard({ image, title, description, price, id }) {
    const [productCount, setProductCount] = useState(0);
-   const { handleAdjustingBag } = useOutletContext();
+   const { addToBag } = useOutletContext();
 
    function handleIncrementProductCount() {
       if (productCount != 100) {
@@ -53,7 +53,7 @@ function ProductCard({ image, title, description, price, id }) {
             </div>
             <button
                onClick={() => {
-                  handleAdjustingBag({ title, image, description, price, id }, productCount);
+                  addToBag(id, productCount);
                   setProductCount(0);
                }}
             >
