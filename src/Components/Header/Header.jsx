@@ -3,13 +3,13 @@ import NavBar from "./../NavBar/NavBar";
 import styles from "./Header.module.css";
 import PropTypes from "prop-types";
 
-function Header({ itemsCount }) {
+function Header({ productsCount }) {
    return (
       <header className={styles.header}>
          <div className={styles.topOfHeader}>
             <h1>Facet Muse</h1>
             <Link to={"/bag"} className={styles.bagBtn}>
-               {itemsCount} Bag
+               {productsCount} Bag
             </Link>
          </div>
 
@@ -19,7 +19,7 @@ function Header({ itemsCount }) {
 }
 
 Header.propTypes = {
-   itemsCount: PropTypes.number,
+   productsCount: PropTypes.number,
 };
 
 export default Header;
