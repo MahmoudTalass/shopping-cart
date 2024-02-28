@@ -7,32 +7,43 @@ import { useState } from "react";
 export default function App() {
    const [bag, setBag] = useState({});
 
-   function handleAdjustingBag(item, quantityInput) {
+   function updateProductQuantity(productId, quantityInput) {
+      let product = bag[productId];
       quantityInput = Number(quantityInput);
 
-      if (item.id in bag) {
+      setBag({
+         ...bag,
+         [productId]: { ...product, quantity: quantityInput },
+      });
+   }
+
+   function addToBag(productId, quantityInput) {
+      let product = bag[productId];
+      quantityInput = Number(quantityInput);
+
+      if (productId in bag) {
          setBag({
             ...bag,
-            [item.id]: { ...item, quantity: bag[item.id].quantity + quantityInput },
+            [productId]: { ...product, quantity: product.quantity + quantityInput },
          });
       } else {
          setBag({
             ...bag,
-            [item.id]: { ...item, quantity: quantityInput },
+            [productId]: { ...product, quantity: quantityInput },
          });
       }
    }
 
-   let itemsCount = 0;
+   let productsCount = 0;
 
-   for (let item in bag) {
-      itemsCount += bag[item].quantity;
+   for (let product in bag) {
+      productsCount += bag[product].quantity;
    }
 
    return (
       <>
-         <Header itemsCount={itemsCount} />
-         <Outlet context={{ handleAdjustingBag, bag }} />
+         <Header productsCount={productsCount} />
+         <Outlet context={{ addToBag, bag }} />
          <Footer />
       </>
    );
