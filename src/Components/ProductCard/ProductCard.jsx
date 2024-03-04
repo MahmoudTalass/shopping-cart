@@ -8,13 +8,13 @@ function ProductCard({ image, title, description, price, id }) {
    const { addToBag } = useOutletContext();
 
    function handleIncrementProductCount() {
-      if (productCount != 100) {
+      if (productCount < 100) {
          setProductCount((count) => count + 1);
       }
    }
 
    function handleDecrementProductCount() {
-      if (productCount != 0) {
+      if (productCount > 0) {
          setProductCount((count) => count - 1);
       }
    }
