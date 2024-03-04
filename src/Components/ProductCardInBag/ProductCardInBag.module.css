@@ -1,0 +1,35 @@
+.productCard {
+   display: flex;
+   padding: 1rem 0.5rem;
+   justify-content: space-between;
+   width: 100%;
+   border-bottom: 1px solid gray;
+}
+
+.productImage {
+   max-width: 150px;
+   flex-grow: 0;
+}
+
+.productInfo {
+   display: flex;
+   flex-direction: column;
+   min-width: 200px;
+   max-width: 300px;
+   align-items: flex-end;
+   gap: 1rem;
+}
+
+.quantityAdjustment {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 0.5rem;
+}
+
+.quantityAdjustment > button {
+   font-size: 3rem;
+   background-color: transparent;
+   border: none;
+   cursor: pointer;
+}
