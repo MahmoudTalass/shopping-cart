@@ -34,7 +34,7 @@ export default function App() {
          });
       }
    }
-   console.log(bag);
+
    let productsCount = 0;
 
    for (let product in bag) {
