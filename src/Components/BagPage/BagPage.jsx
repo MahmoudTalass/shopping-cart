@@ -7,9 +7,11 @@ export default function BagPage() {
 
    return (
       <main className={style.bagContainer}>
-         {Object.keys(bag).map((productId) => {
-            return <ProductCardInBag key={productId} {...bag[productId]} />;
-         })}
+         <div className={style.bagProductCardsContainer}>
+            {Object.keys(bag).map((productId) => {
+               return <ProductCardInBag key={productId} {...bag[productId]} />;
+            })}
+         </div>
       </main>
    );
 }
