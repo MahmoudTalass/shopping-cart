@@ -21,6 +21,10 @@ export default function App() {
       }
    }
 
+   function clearBag() {
+      setBag({});
+   }
+
    function removeFromBag(productId) {
       // eslint-disable-next-line no-unused-vars
       const { [productId]: _, ...rest } = bag;
@@ -55,7 +59,7 @@ export default function App() {
    return (
       <>
          <Header productsCount={productsCount} />
-         <Outlet context={{ addToBag, bag, updateProductQuantity }} />
+         <Outlet context={{ addToBag, bag, updateProductQuantity, clearBag }} />
          <Footer />
       </>
    );
