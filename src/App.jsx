@@ -51,12 +51,11 @@ export default function App() {
    for (let product in bag) {
       productsCount += bag[product].quantity;
    }
-   console.log(bag);
 
    return (
       <>
          <Header productsCount={productsCount} />
-         <Outlet context={{ addToBag, bag }} />
+         <Outlet context={{ addToBag, bag, updateProductQuantity }} />
          <Footer />
       </>
    );
