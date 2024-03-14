@@ -11,10 +11,21 @@ export default function App() {
       let product = bag[productId];
       quantityInput = Number(quantityInput);
 
-      setBag({
-         ...bag,
-         [productId]: { ...product, quantity: quantityInput },
-      });
+      if (quantityInput == 0) {
+         removeFromBag(productId);
+      } else {
+         setBag({
+            ...bag,
+            [productId]: { ...product, quantity: quantityInput },
+         });
+      }
+   }
+
+   function removeFromBag(productId) {
+      // eslint-disable-next-line no-unused-vars
+      const { [productId]: _, ...rest } = bag;
+
+      setBag(rest);
    }
 
    function addToBag(product, quantityInput) {
@@ -40,6 +51,7 @@ export default function App() {
    for (let product in bag) {
       productsCount += bag[product].quantity;
    }
+   console.log(bag);
 
    return (
       <>
