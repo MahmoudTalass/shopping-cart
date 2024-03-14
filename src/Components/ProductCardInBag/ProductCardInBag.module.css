@@ -2,13 +2,15 @@
    display: flex;
    padding: 1rem 0.5rem;
    justify-content: space-between;
-   width: 100%;
    border-bottom: 1px solid gray;
+   gap: 3rem;
+   align-items: center;
 }
 
 .productImage {
-   max-width: 150px;
+   max-width: 180px;
    flex-grow: 0;
+   align-self: flex-start;
 }
 
 .productInfo {
