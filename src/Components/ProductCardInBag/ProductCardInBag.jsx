@@ -1,9 +1,11 @@
 import PropTypes from "prop-types";
 import styles from "./ProductCardInBag.module.css";
 import { useState } from "react";
+import { useOutletContext } from "react-router-dom";
 
 function ProductCardInBag({ image, title, price, id, quantity }) {
    const [productCount, setProductCount] = useState(quantity);
+   const { updateProductQuantity } = useOutletContext();
 
    function handleIncreaseCount() {
       if (productCount < 100) {
@@ -28,7 +30,15 @@ function ProductCardInBag({ image, title, price, id, quantity }) {
                <p>quantity: {productCount}</p>
                <button onClick={handleIncreaseCount}>+</button>
             </div>
-            {productCount != quantity && <button>Submit change</button>}
+            {productCount != quantity && (
+               <button
+                  onClick={() => {
+                     updateProductQuantity(id, productCount);
+                  }}
+               >
+                  Submit change
+               </button>
+            )}
          </div>
       </article>
    );
