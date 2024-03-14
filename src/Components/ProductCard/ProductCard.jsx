@@ -53,8 +53,10 @@ function ProductCard({ image, title, description, price, id }) {
             </div>
             <button
                onClick={() => {
-                  addToBag({ image, title, description, price, id }, productCount);
-                  setProductCount(0);
+                  if (productCount != 0) {
+                     addToBag({ image, title, description, price, id }, productCount);
+                     setProductCount(0);
+                  }
                }}
             >
                Add to bag
