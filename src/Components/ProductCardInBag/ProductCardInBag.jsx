@@ -26,9 +26,13 @@ function ProductCardInBag({ image, title, price, id, quantity }) {
             <p>{title}</p>
             <p>Price: ${price}</p>
             <div className={styles.quantityAdjustment}>
-               <button onClick={handleDecreaseCount}>-</button>
+               <button onClick={handleDecreaseCount} aria-label="decrement">
+                  -
+               </button>
                <p>quantity: {productCount}</p>
-               <button onClick={handleIncreaseCount}>+</button>
+               <button onClick={handleIncreaseCount} aria-label="increment">
+                  +
+               </button>
             </div>
             {productCount != quantity && (
                <button
