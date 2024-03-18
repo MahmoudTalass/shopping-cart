@@ -1,23 +1,23 @@
 /* eslint-disable no-undef */
 import { render, screen } from "@testing-library/react";
 import HomePage from "./HomePage";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, MemoryRouter } from "react-router-dom";
 
 describe("Home page tests", () => {
    it("Ship Link renders", () => {
       render(
-         <BrowserRouter>
+         <MemoryRouter>
             <HomePage />
-         </BrowserRouter>
+         </MemoryRouter>
       );
 
       expect(screen.queryByRole("link").textContent).toBe("Shop");
    });
    it("Ship Link renders", () => {
       render(
-         <BrowserRouter>
+         <MemoryRouter>
             <HomePage />
-         </BrowserRouter>
+         </MemoryRouter>
       );
 
       expect(screen.queryByAltText("jewelry")).not.toBe(null);
