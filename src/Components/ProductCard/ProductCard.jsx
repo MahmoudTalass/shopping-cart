@@ -38,9 +38,9 @@ function ProductCard({ image, title, description, price, id }) {
                   className={styles.productCountInput}
                   type="number"
                   max={100}
-                  value={productCount}
+                  value={Number(productCount).toString()}
                   onChange={(e) => {
-                     setProductCount(e.target.value);
+                     setProductCount(Number(e.target.value));
                   }}
                />
                <button
