@@ -23,7 +23,7 @@ const product = {
    id: 1,
 };
 
-describe("product card tests", () => {
+describe("ProductCard component tests", () => {
    it("renders the product info shows up", async () => {
       render(<ProductCard {...product} />);
 
