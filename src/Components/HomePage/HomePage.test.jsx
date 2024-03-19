@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import { render, screen } from "@testing-library/react";
 import HomePage from "./HomePage";
-import { BrowserRouter, MemoryRouter } from "react-router-dom";
+import { MemoryRouter } from "react-router-dom";
 
 describe("Home page tests", () => {
    it("Ship Link renders", () => {

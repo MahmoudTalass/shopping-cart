@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 import ProductCard from "./ProductCard";
 import { render, screen } from "@testing-library/react";
-import { vi } from "vitest";
 import userEvent from "@testing-library/user-event";
 
 const addToBagMock = vi.fn().mockResolvedValue("added");
